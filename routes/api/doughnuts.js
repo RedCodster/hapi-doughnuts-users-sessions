@@ -1,6 +1,6 @@
 exports.register = function (server, options, next) {
   server.route([
-    {
+    { // INDEX. Get all doughnuts
       method: 'GET',
       path: '/api/doughnuts',
       handler: function (request, reply) {
@@ -12,7 +12,7 @@ exports.register = function (server, options, next) {
         });
       }
     },
-    {
+    { // Creating a new doughnut record.
       method: 'POST',
       path: '/api/doughnuts',
       handler: function (request, reply) {

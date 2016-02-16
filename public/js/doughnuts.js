@@ -120,10 +120,24 @@ $(document).ready(function () {
     });
   };
 
+  var bindSignout = function () {
+    $('#signout').on('click', function (e) {
+      $.ajax({
+        type: "DELETE",
+        url: '/api/sessions',
+        success: function (response) {
+          console.log(response);
+          window.location.href = '/';
+        }
+      });
+    });
+  };
+
   var init = function () {
     getAllDonuts();
     bindCreateButton();
     bindUpdateDonut();
+    bindSignout();
   };
 
   init();
